@@ -25,8 +25,9 @@ def index(request: Request) -> Any:
     """Basic HTML response."""
     body = (
         "<html>"
+        "<style>body {background-image: url('https://wallpapercave.com/wp/SuiwHGx.jpg'); background-size: cover}</style>"
         "<body style='padding: 10px;'>"
-        "<h1>Welcome to the API</h1>"
+        "<h1>Welcome to the API 2.0</h1>"
         "<div>"
         "Check the docs: <a href='/docs'>here</a>"
         "</div>"

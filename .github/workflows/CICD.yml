@@ -7,7 +7,7 @@ on:
 
 jobs:
   train:
-    runs-on: ubuntu-latest
+    runs-on: colab-01
     strategy:
       fail-fast: false
     steps:
@@ -28,7 +28,7 @@ jobs:
 
   test:
     needs: train
-    runs-on: ubuntu-latest
+    runs-on: codespace-01
     strategy:
       fail-fast: false
     steps:
@@ -48,7 +48,7 @@ jobs:
 
   build:
     needs: [train, test]
-    runs-on: ubuntu-latest
+    runs-on: codespace-01
     strategy:
       fail-fast: false
     steps:
@@ -73,7 +73,7 @@ jobs:
 
   push-image:
     needs: [train, test, build]
-    runs-on: ubuntu-latest
+    runs-on: codespace-01
     steps:
     - name: Repo Checkout
       uses: actions/checkout@v3
